@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <title> Marathon Man vs Mind </title>
+   <meta charset="utf-8">
+  	<link rel="stylesheet" href="main.css">
+  	<script src="js/jquery-3.2.1.min.js"></script>
+  	<script src="main.js"></script>
+  	<sc></sc>
+</head>
+<!--
+  		Aziz, Shekib
+      jadrn004
+      Project #2
+      Fall 2017
+-->
+    
+<body>
+	<header>
+		<div class=logoWriting>
+			<h1>Man vs Mind Marathon</h1>
+			<p>Hosted by San Diego State University</p>
+		</div>
+		<div class=address>
+			<p>5500 Campanile Dr <br> San Diego, CA 92182</p>
+			<p class=phone>(619)-594-5200</p>
+		</div>
+		<div class="clear">     </div>
+		
+		<div class="navbar">
+			<ul>
+				<li><a href="#">HOME</a> </li>
+				<li><a href="#aboutUs">ABOUT US</a> </li>
+				<li><a href="#signUp">SIGN UP</a> </li>
+			</ul>
+		</div>
+		<div class=pic>
+			<img class=mainPic src="images/mainPic.jpg" alt="SDSU Students Running">
+			<h4>San Diego State University famous Marathon!</h4>
+			<p>We aztec are knows for our brave souls and ability to overcome challenges.  By becoming an Aztec you are challenging not only yourself but the whole world! We are AZTEC and we love looking in the eyes of fear! This annual tradition is one of the unique Aztec experiances you get to experiance by becoming an Aztec.
+			</p>
+		</div>
+	</header>
+  <div class=aboutUs>
+  		<h3 id=aboutUs>ABOUT US</h3>
+  		<div class=boxesPicWriting>
+  			<div>
+  				<img id="left" src="images/nakedRun.png" alt="">
+  				<h4 id=textMiddle> Night Run </h4>
+  				<p>Nullam egestas vitae est vel bibendum. Duis sed feugiat tortor. Nunc ac quam convallis, semper erat sed, sodales dolor. Mauris dapibus massa commodo gravida dignissim. Vivamus ullamcorper auctor lacus, id aliquam nibh tempor at. Morbi massa sapien, ullamcorper in suscipit vel, mollis id dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc ut neque porta, consequat dolor nec, mattis sem. Integer vel urna justo. Fusce lobortis lacus dui, vel blandit nisi facilisis in. Proin maximus, metus ac dignissim consequat, nibh est efficitur enim, porta volutpat est tortor nec ante.</p>
+  			</div>
+  			
+				<div class="clear">  </div>  
+  			
+  			<div class=floatRight>
+  				<img id="right" src="images/hepnerhall.jpeg" alt="">
+  				<h4 id=textMiddle>Music </h4>
+  				<p>Nullam egestas vitae est vel bibendum. Duis sed feugiat tortor. Nunc ac quam convallis, semper erat sed, sodales dolor. Mauris dapibus massa commodo gravida dignissim. Vivamus ullamcorper auctor lacus, id aliquam nibh tempor at. Morbi massa sapien, ullamcorper in suscipit vel, mollis id dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc ut neque porta, consequat dolor nec, mattis sem. Integer vel urna justo. Fusce lobortis lacus dui, vel blandit nisi facilisis in. Proin maximus, metus ac dignissim consequat, nibh est efficitur enim, porta volutpat est tortor nec ante.</p>
+  			</div>
+  			
+				<div class="clear">     </div>
+  		
+  			<div>
+  				<img id="left" src="images/orchestra.png" alt="">
+  				<h4 id=textMiddle>Festival </h4>
+  				<p>Nullam egestas vitae est vel bibendum. Duis sed feugiat tortor. Nunc ac quam convallis, semper erat sed, sodales dolor. Mauris dapibus massa commodo gravida dignissim. Vivamus ullamcorper auctor lacus, id aliquam nibh tempor at. Morbi massa sapien, ullamcorper in suscipit vel, mollis id dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc ut neque porta, consequat dolor nec, mattis sem. Integer vel urna justo. Fusce lobortis lacus dui, vel blandit nisi facilisis in. Proin maximus, metus ac dignissim consequat, nibh est efficitur enim, porta volutpat est tortor nec ante.</p>
+  			</div>
+	  </div>
+	  <div class="clear">     </div> 
+	  <hr>
+</div>
+		 <div class="signUp">
+		 	<h3 id="signUp">Sign Up</h3>
+	 
+		 </div>
+		 	<fieldset>
+		 		<legend>Registration Form</legend>
+						<form name="customer" enctype="multipart/form-data" method="post" action="/~jadrn000/forms/echo.php">
+						
+						<label for="firstName">First Name:* </label>
+						<input type="text" name="firstName" size=30 id="firstName" >
+					
+						<label for="lastName">Last Name:*</label>
+						<input type="text" name="lastName" size=30 id=lastName><br>
+						
+						<label for="middleName">Middle Name:</label>
+						<input type="text" name="middleName" size=30 id=middleName><br>
+						
+						<label for="address">Address:*</label>
+						<input type="text" name="address" size=80 id=address><br>
+						
+						<label for="city">City:*</label>
+						<input type="text" name="city" size=30 id=city>
+						
+						<label for="state">State:*</label> 
+						<input type="text" name="state" size=7 id=state>
+						
+						<label for="zipcode">Zipcode:*</label>
+						<input type="text" name="zipcode" size=10 id=zipcode maxlength="5"><br>
+						
+						<label for="primaryPhone">Primary Phone*:</label>
+						(<input type="text" name="area_phone" size="5" maxlength="3" />)  
+                  <input type="text" name="prefix_phone" size="5" maxlength="3" />
+                  <input type="text" name="phone" size="8" maxlength="4" /><br>
+						
+						<label for="email">Email:*</label>
+						<input type="text" name="email" size=25 id=email><br>
+						
+						<label for="gender">Gender:*</label>
+						<input type="radio" name="gender" size=5 value="male" id="male">
+						<label for="male">Male</label>
+						<input type="radio" name="gender" size=5 value="female" id="female">
+						<label for="female">Female</label><br>
+					
+						<label for="DOB">Date of Birth:*</label>
+						<input type="text" name="DOB" size=15 placeholder="mm/dd/yyyy" maxlength="10"><br> 
+						
+						<label for="medicalCondition">Medical Condition:</label>
+						<textarea name="medicalCondition" id="medicalCondition" cols="50" rows="5"></textarea><br>
+						
+						<label for="experianceLevel">Experiance Level:*</label>
+						<input type="radio" name="experianceLevel" value=expert id=expert>
+						<label for="expert">Expert</label>
+						<input type="radio" name="experianceLevel" value=experienced id=experienced>
+						<label for="experienced">Experienced</label>
+						<input type="radio" name="experianceLevel" value=novice id=novice>
+						<label for="novice">Novice</label><br>
+						
+						<label for="ageGroup">Age Group:*</label>
+						<input type="radio" name="ageGroup" value=senior id=senior>
+						<label for="senior">Senior</label>
+						<input type="radio" name="ageGroup" value=adult id=adult>
+						<label for="adult">Adult</label>
+						<input type="radio" name="ageGroup" value=teen id=teen>
+						<label for="teen">Teen</label><br>
+						
+						<label for="userPic">Add a picture</label>
+						<input type="file" name="user_pic" accept="image/*" />
+
+						<hr>
+						 <div class=buttons>
+						 <div id="message_line">&nbsp;</div>
+							<input id=reset type="reset">
+							<input type="submit" value=Submit id=submit>
+						</div>
+					</form>
+					
+		 	</fieldset>
+		 	<footer>Copyright</footer>
+</body>
+</html>

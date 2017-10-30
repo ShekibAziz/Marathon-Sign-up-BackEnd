@@ -1,0 +1,177 @@
+/*
+Aziz, Shekib
+      jadrn004
+      Project #2
+      Fall 2017
+*/
+html{
+/*  background color*/
+ 	 background:
+	 linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+	 linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+	 linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+	 linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+	 linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+	 linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+	 background-color: #131313;
+	 background-size: 20px 20px;
+/*  background color*/
+}
+body{
+/*  background color*/
+  background: #293f50;
+  background: radial-gradient(#648880, #293f50);
+  background-color: #b2b2b2;
+  background-color: rgba(0, 0, 0, .3);
+/*  background color*/
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 80%;
+  color: white;
+  margin: 0 auto;
+  min-width: 840px;
+} 
+.logoWriting{
+	display: inline-block;
+  float:left;
+}
+div.logoWriting h1{
+  padding: 10px 20px;
+  padding:10px 0px 0px 20px;
+  font-family: Chalkduster, fantasy;
+  color: goldenrod;
+}
+div.logoWriting p{
+  font-family:  Caflisch Script Pro, cursive;
+  padding-left: 30px;
+  margin-top:-25px; 
+}
+.address{
+	display: inline-block;
+   float: right;
+	margin: 10px 30px 0px 0px;
+	font-size: 12px;
+	color: antiquewhite;
+}
+.address p {
+	margin-bottom: 3px;
+}
+.address p.phone{
+	margin: 0;
+	font-size: 17px;
+	color:bisque;
+}
+.clear{
+	clear: both;
+}
+div.navbar{
+	width: 95%;
+	margin: auto;
+	background-color: darkslategray;
+}
+div.navbar ul{
+	padding: 7px;
+	border-left:6px solid gold;
+}
+
+div.navbar ul li{
+	display: inline;
+	padding: inherit;
+	text-align:center;
+}
+div.navbar ul li:hover{
+	background-color: aquamarine;
+}
+div.navbar ul li a {
+	text-decoration: none;
+	color:chocolate;
+}
+.mainPic{
+	border: 3px solid goldenrod;
+	display: block;
+	margin: auto;
+}
+div.pic h4{
+	margin: 2px;
+	text-align: center;
+	color:bisque;
+}
+div.pic p{
+	margin: 8px 2.5%;
+	color: antiquewhite;
+	font-size: 13px;
+}
+/*About us*/
+div h3{
+	padding: 5px 20px;
+   font-family: Chalkduster, fantasy;
+	font-size: 100%;
+	color: goldenrod;
+	width: 90%;
+	margin: auto;
+	background-color: darkslategray;
+	border-right:3px solid gold;
+	text-align: right;
+}
+div.aboutUs div div {
+	width: 90%;
+	margin: auto;
+	vertical-align: middle;
+	line-height: normal;
+}
+div.aboutUs div div img{
+	width: 225px;
+	height: auto;
+	border: 3px solid gold;
+	margin: 10px 10px 30px 10px;
+}
+div.aboutUs div div h4{
+	padding-top: 10px;
+	margin: 0px;
+	color: goldenrod;
+}
+div.aboutUs div div p{
+	margin: 0;
+	color:antiquewhite;
+}
+#textMiddle{
+	font-size: 150%;
+	text-align: center;
+	margin-bottom: 5px;
+}
+#right{
+	float: right;
+}
+#left{
+	float: left;
+}
+
+/*Sign up Page*/
+
+fieldset{
+	margin: auto;
+	width: 80%;
+	border-radius: 8px;
+}
+label{
+	color:palegoldenrod;
+	line-height: 30px;
+}
+#medicalCondition{
+	vertical-align: text-top;
+}
+.buttons{
+	text-align: center;	
+}
+#message_line{
+	color:red;
+	padding-bottom: 10px
+}
+footer{
+	margin-top:20px;
+	padding-top:50px;
+	background-color: darkslategray;
+	height: 75px;
+	width: 100%;
+	vertical-align: middle;
+	text-align: center;
+}

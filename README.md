@@ -1,2 +1,1 @@
-# Marathon-Sign-up-BackEnd
-Server Side. (Ajax,PHP)
+#Marathon-Sign-Up HTML/CSS/JS.
