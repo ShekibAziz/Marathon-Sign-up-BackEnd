@@ -3,70 +3,116 @@
 //      Project #2
 //      Fall 2017
  
-	// Checks if date entered is valid. format: mm/dd/yyyy
-	 function isValidDate(dateString){
-		 // First check for the pattern
-		 if(!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(dateString))
-			  return false;
-
-		 // Parse the date parts to integers
-		 var parts = dateString.split("/");
-		 var day = parseInt(parts[1], 10);
-		 var month = parseInt(parts[0], 10);
-		 var year = parseInt(parts[2], 10);
-
-		 // Check the ranges of month and year
-		 if(year < 1990 || year > 2016 || month == 0 || month > 12)
-			  return false;
-
-		 var monthLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
-
-		 // Adjust for leap years
-		 if(year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
-			  monthLength[1] = 29;
-
-		 // Check the range of the day
-		 return day > 0 && day <= monthLength[month - 1];
-	}
-
-	 function checkGender(){
-		 return ($('[name="gender"]:checked').val() == "male" || 
-					$('[name="gender"]:checked').val() == "female");
-	 }
+/*
+										Prog 3 completion checklist.
+										Done
+	_ 1.Be able to put user information from the browser to the database
 	
-	 function checkExperiance(){
-		return ($('[name="experianceLevel"]:checked').val() == "expert" ||
-				  $('[name="experianceLevel"]:checked').val() == "experienced" ||
-				  $('[name="experianceLevel"]:checked').val() == "novice" );
-	 }
-		
-	 function checkAgeGroup(){
-		return ($('[name="ageGroup"]:checked').val() == "senior" ||
-				  $('[name="ageGroup"]:checked').val() == "adult" ||
-				  $('[name="ageGroup"]:checked').val() == "teen" );
-	}
+										Not done yet
+	_ 2.Check_dup if the database already has this user by comaring phone number and email
+	_ 3.Server_side data sanitation Just like we did with js but now in the backend with php
+	_ 4.upload the pic and save it to a folder and save as the person's phone number
+	_ 5.Report_Page that gives the roster of the runners gouped by(teen, adult, senior) and 			  alphabetixe by last name
+				Runner's last name, firstname
+				The runner's image
+				Runner's age at the time the report is generated
+				runner's experience level
+	_ 6.eport must be accessible only after a login
+		MUST BE PASSWORD PROTECTED (3 passwords (cs545, and two of my choice)) 
+			Passwords must be encrypted on the server.
+	- Confirmation_Page -> just show them the info they have intered.
+*/
 
-    function isEmpty(fieldValue){
-        return $.trim(fieldValue).length == 0;    
-        } 
-        
-    function isValidState(state){                                
-        var stateList = new Array("AK","AL","AR","AZ","CA","CO","CT","DC",
-        "DE","FL","GA","GU","HI","IA","ID","IL","IN","KS","KY","LA","MA",
-        "MD","ME","MH","MI","MN","MO","MS","MT","NC","ND","NE","NH","NJ",
-        "NM","NV","NY","OH","OK","OR","PA","PR","RI","SC","SD","TN","TX",
-        "UT","VA","VT","WA","WI","WV","WY");
-        for(var i=0; i < stateList.length; i++) 
-            if(stateList[i] == $.trim(state))
-                return true;
-        return false;
-        }  
-        
-    // copied from stackoverflow.com,         
-    function isValidEmail(emailAddress) {
-        var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-        return pattern.test(emailAddress);
-        }                
+/*Checklist for comletion of every task 
+  ERROR messages for every time something is wrong.
+*/
+
+/*
+			Questions:
+		1. When the person hits submit it doesnt work the first time because the blur function takes place. Therefore they need to press submit twice. How do I resorve this problem.	
+		
+*/
+
+	// Checks if date entered is valid. format: mm/dd/yyyy
+function isValidDate(dateString){
+	 // First check for the pattern
+	 if(!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(dateString))
+		  return false;
+
+	 // Parse the date parts to integers
+	 var parts = dateString.split("/");
+	 var day = parseInt(parts[1], 10);
+	 var month = parseInt(parts[0], 10);
+	 var year = parseInt(parts[2], 10);
+
+	 // Check the ranges of month and year
+	 if(year < 1990 || year > 2016 || month === 0 || month > 12)
+		  return false;
+
+	 var monthLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+	 // Adjust for leap years
+	 if(year % 400 === 0 || (year % 100 !== 0 && year % 4 === 0))
+		  monthLength[1] = 29;
+
+	 // Check the range of the day
+	 return day > 0 && day <= monthLength[month - 1];
+}
+
+function checkGender(){
+	 return ($('[name="gender"]:checked').val() == "male" || 
+				$('[name="gender"]:checked').val() == "female");
+ }
+
+function checkExperiance(){
+	return ($('[name="experianceLevel"]:checked').val() == "expert" ||
+			  $('[name="experianceLevel"]:checked').val() == "experienced" ||
+			  $('[name="experianceLevel"]:checked').val() == "novice" );
+ }
+
+function checkAgeGroup(){
+	return ($('[name="ageGroup"]:checked').val() == "senior" ||
+			  $('[name="ageGroup"]:checked').val() == "adult" ||
+			  $('[name="ageGroup"]:checked').val() == "teen" );
+}
+
+function isEmpty(fieldValue){
+	  return $.trim(fieldValue).length === 0;    
+	  } 
+
+function isValidState(state){                                
+	  var stateList = new Array("AK","AL","AR","AZ","CA","CO","CT","DC",
+	  "DE","FL","GA","GU","HI","IA","ID","IL","IN","KS","KY","LA","MA",
+	  "MD","ME","MH","MI","MN","MO","MS","MT","NC","ND","NE","NH","NJ",
+	  "NM","NV","NY","OH","OK","OR","PA","PR","RI","SC","SD","TN","TX",
+	  "UT","VA","VT","WA","WI","WV","WY");
+	  for(var i=0; i < stateList.length; i++) 
+			if(stateList[i] == $.trim(state))
+				 return true;
+	  return false;
+	  }  
+
+ // copied from stackoverflow.com,         
+function isValidEmail(emailAddress) {
+	var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+	return pattern.test(emailAddress);
+} 
+
+function retrive(){
+	var xhr = new XMLHttpRequest();
+		try	{ 
+			xhr;
+		}
+		catch(e) { 
+			window.alert("error");
+		}
+	
+	xhr.onreadystatechange = function(){
+		if(this.readyState === 4 && this.status === 200)
+			  document.getElementById("message_line").innerHTML= this.responseText;
+	};
+	
+}
                    
 $(document).ready( function() {
     var errorStatusHandle = $('#message_line');
@@ -79,8 +125,8 @@ $(document).ready( function() {
     elementHandle[4] = $('[name="city"]');
     elementHandle[5] = $('[name="state"]');
     elementHandle[6] = $('[name="zipcode"]');
-    elementHandle[7] = $('[name="area_phone"]');
-    elementHandle[8] = $('[name="prefix_phone"]');
+    elementHandle[7] = $('[name="areaPhone"]');
+    elementHandle[8] = $('[name="prefixPhone"]');
     elementHandle[9] = $('[name="phone"]');
     elementHandle[10] = $('[name="email"]');
 	 elementHandle[11] = $('[name="gender"]');
@@ -88,7 +134,7 @@ $(document).ready( function() {
 	 elementHandle[13] = $('[name="medicalCondition"]');
 	 elementHandle[14] = $('[name="experianceLevel"]');
 	 elementHandle[15] = $('[name="ageGroup"]');
-	 elementHandle[16] = $('input[name="user_pic"]');
+	 elementHandle[16] = $('input[name="userPic"]');
 	
 	 elementHandle[0].focus();
 	
@@ -150,7 +196,7 @@ $(document).ready( function() {
             }
         if(elementHandle[6].val().length !=5) {
             elementHandle[6].addClass("error");
-            errorStatusHandle.text("The zip code must have exactly five digits")
+            errorStatusHandle.text("The zip code must have exactly five digits");
             elementHandle[6].focus();            
             return false;
             }
@@ -169,7 +215,7 @@ $(document).ready( function() {
             }
         if(elementHandle[7].val().length != 3) {
             elementHandle[7].addClass("error");
-            errorStatusHandle.text("The area code must have exactly three digits")
+            errorStatusHandle.text("The area code must have exactly three digits");
             elementHandle[7].focus();            
             return false;
             }   
@@ -188,7 +234,7 @@ $(document).ready( function() {
             }
         if(elementHandle[8].val().length != 3) {
             elementHandle[8].addClass("error");
-            errorStatusHandle.text("The phone number prefix must have exactly three digits")
+            errorStatusHandle.text("The phone number prefix must have exactly three digits");
             elementHandle[8].focus();            
             return false;
             }
@@ -207,7 +253,7 @@ $(document).ready( function() {
             }
         if(elementHandle[9].val().length != 4) {
             elementHandle[9].addClass("error");
-            errorStatusHandle.text("The phone number must have exactly four digits")
+            errorStatusHandle.text("The phone number must have exactly four digits");
             elementHandle[9].focus();            
             return false;
             }  
@@ -247,7 +293,7 @@ $(document).ready( function() {
 				elementHandle[15].focus();
 				return false;
 			} 
-		 	if(size == 0) {
+		 	if(size === 0) {
 				elementHandle[16].addClass("error");
 				errorStatusHandle.text("Please select a file");
 				elementHandle[16].focus();
@@ -261,6 +307,13 @@ $(document).ready( function() {
 				}
         return true;
         }       
+	
+	
+	
+//	var params =$('form').serialize();
+	
+	
+
 	
 // on blur, if the user has entered valid data, the error message
 // should no longer show.
@@ -358,17 +411,14 @@ $(document).ready( function() {
             errorStatusHandle.text("");
             }
         });       
-
-    elementHandle[5].on('keyup', function() {
+   elementHandle[5].on('keyup', function() {
         elementHandle[5].val(elementHandle[5].val().toUpperCase());
-        });
-        
-    elementHandle[7].on('keyup', function() {
+        });     
+   elementHandle[7].on('keyup', function() {
         if(elementHandle[7].val().length == 3)
             elementHandle[8].focus();
-            });
-            
-    elementHandle[8].on('keyup', function() {
+            });           
+   elementHandle[8].on('keyup', function() {
         if(elementHandle[8].val().length == 3)
             elementHandle[9].focus();
             });            
@@ -378,11 +428,11 @@ $(document).ready( function() {
             elementHandle[i].removeClass("error");
         errorStatusHandle.text("");
         return isValidData();
-        });
-        
+        });  
     $(':reset').on('click', function() {
         for(var i=0; i < 11; i++)
             elementHandle[i].removeClass("error");
         errorStatusHandle.text("");
         });                                       
 });
+

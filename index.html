@@ -76,7 +76,7 @@
 		 </div>
 		 	<fieldset>
 		 		<legend>Registration Form</legend>
-						<form name="customer" enctype="multipart/form-data" method="post" action="/~jadrn000/forms/echo.php">
+						<form name="customer" enctype="multipart/form-data" method="GET" action="main.php">
 						
 						<label for="firstName">First Name:* </label>
 						<input type="text" name="firstName" size=30 id="firstName" >
@@ -100,12 +100,12 @@
 						<input type="text" name="zipcode" size=10 id=zipcode maxlength="5"><br>
 						
 						<label for="primaryPhone">Primary Phone*:</label>
-						(<input type="text" name="area_phone" size="5" maxlength="3" />)  
-                  <input type="text" name="prefix_phone" size="5" maxlength="3" />
-                  <input type="text" name="phone" size="8" maxlength="4" /><br>
+						(<input type="text" name="areaPhone" size="5" maxlength="3" id="areaPhone" />)  
+                  <input type="text" name="prefixPhone" size="5" maxlength="3" id="prefixPhone" />
+                  <input type="text" name="phone" size="8" maxlength="4" id="phone"/><br>
 						
 						<label for="email">Email:*</label>
-						<input type="text" name="email" size=25 id=email><br>
+						<input type="text" name="email" size=25 id="email"><br>
 						
 						<label for="gender">Gender:*</label>
 						<input type="radio" name="gender" size=5 value="male" id="male">
@@ -136,7 +136,7 @@
 						<label for="teen">Teen</label><br>
 						
 						<label for="userPic">Add a picture</label>
-						<input type="file" name="user_pic" accept="image/*" />
+						<input type="file" name="userPic" accept="image/*" />
 
 						<hr>
 						 <div class=buttons>
