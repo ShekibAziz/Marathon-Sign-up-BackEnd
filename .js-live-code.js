@@ -7,10 +7,9 @@
 										Prog 3 completion checklist.
 										Done
 	_ 1.Be able to put user information from the browser to the database
-	_ 2.Check_dup if the database already has this user by comaring phone number and email
-	
 	
 										Not done yet
+	_ 2.Check_dup if the database already has this user by comaring phone number and email
 	_ 3.Server_side data sanitation Just like we did with js but now in the backend with php
 	_ 4.upload the pic and save it to a folder and save as the person's phone number
 	_ 5.Report_Page that gives the roster of the runners gouped by(teen, adult, senior) and 			  alphabetixe by last name
@@ -424,42 +423,16 @@ $(document).ready( function() {
             elementHandle[9].focus();
             });            
 
-    $(':submit').on('click', function(e) {
+    $(':submit').on('click', function() {
         for(var i=0; i < 11; i++)
             elementHandle[i].removeClass("error");
         errorStatusHandle.text("");
-		  e.preventDefault();
-		 if ( isValidData() ){
-			 var params = $('form').serialize();
-			 window.console.log(params);
-			 window.console.log(elementHandle[15].val());
-			 window.console.log(elementHandle[16].val());
-			 var url = "main.php";
-			 $.ajax({
-				 type: "GET",
-				 url: url,
-				 data: params,
-				 success: function (response){
-					  if(response === 'dup')
-							$('#message_line').text("This email adress or phone number have been used already");
-					 else if (response === 'ok'){
-						window.alert("sucessfully registered aka ok");
-					}
-					else	
-						$('#message_line').text(response);
-				}
-			 });	
-		 }
+        return isValidData();
         });  
-
-	
-	
     $(':reset').on('click', function() {
         for(var i=0; i < 11; i++)
             elementHandle[i].removeClass("error");
         errorStatusHandle.text("");
         });                                       
-}); //jquery ready document
+});
 
-	
-		

@@ -76,7 +76,7 @@
 		 </div>
 		 	<fieldset>
 		 		<legend>Registration Form</legend>
-						<form name="customer" enctype="multipart/form-data" method="GET" action="main.php">
+						<form name="customer" enctype="multipart/form-data" method="GET" action="main.php" id="form">
 						
 						<label for="firstName">First Name:* </label>
 						<input type="text" name="firstName" size=30 id="firstName" >
@@ -136,13 +136,13 @@
 						<label for="teen">Teen</label><br>
 						
 						<label for="userPic">Add a picture</label>
-						<input type="file" name="userPic" accept="image/*" />
+						<input type="file" name="userPic" accept="image/*" id="userPic">
 
 						<hr>
 						 <div class=buttons>
-						 <div id="message_line">&nbsp;</div>
 							<input id=reset type="reset">
 							<input type="submit" value=Submit id=submit>
+							<div id="message_line">&nbsp;</div>
 						</div>
 					</form>
 					
