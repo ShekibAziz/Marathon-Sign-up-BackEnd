@@ -8,20 +8,21 @@
 										Done
 	_ 1.Be able to put user information from the browser to the database
 	_ 2.Check_dup if the database already has this user by comaring phone number and email
+	_ 3Confirmation_Page -> just show them the info they have intered.
 	
 	
 										Not done yet
-	_ 3.Server_side data sanitation Just like we did with js but now in the backend with php
-	_ 4.upload the pic and save it to a folder and save as the person's phone number
-	_ 5.Report_Page that gives the roster of the runners gouped by(teen, adult, senior) and 			  alphabetixe by last name
+	_ 4.Server_side data sanitation Just like we did with js but now in the backend with php
+	_ 5.upload the pic and save it to a folder and save as the person's phone number
+	_ 6.Report_Page that gives the roster of the runners gouped by(teen, adult, senior) and 			  alphabetixe by last name
 				Runner's last name, firstname
 				The runner's image
 				Runner's age at the time the report is generated
 				runner's experience level
-	_ 6.eport must be accessible only after a login
+	_ 7.eport must be accessible only after a login
 		MUST BE PASSWORD PROTECTED (3 passwords (cs545, and two of my choice)) 
 			Passwords must be encrypted on the server.
-	- Confirmation_Page -> just show them the info they have intered.
+	- 
 */
 
 /*Checklist for comletion of every task 
@@ -30,7 +31,8 @@
 
 /*
 			Questions:
-		1. When the person hits submit it doesnt work the first time because the blur function takes place. Therefore they need to press submit twice. How do I resorve this problem.	
+		1.how do I make the target css on the run. When the js is loading the html. ?
+		2.make sure when you put a picture or uploud a picture the confirmation works perfectly.
 		
 */
 
@@ -425,25 +427,25 @@ $(document).ready( function() {
             });            
 
     $(':submit').on('click', function(e) {
+		 e.preventDefault();
         for(var i=0; i < 11; i++)
             elementHandle[i].removeClass("error");
         errorStatusHandle.text("");
-		  e.preventDefault();
 		 if ( isValidData() ){
 			 var params = $('form').serialize();
-			 window.console.log(params);
-			 window.console.log(elementHandle[15].val());
-			 window.console.log(elementHandle[16].val());
-			 var url = "main.php";
+			 
 			 $.ajax({
 				 type: "GET",
-				 url: url,
+				 url: "main.php",
 				 data: params,
 				 success: function (response){
 					  if(response === 'dup')
-							$('#message_line').text("This email adress or phone number have been used already");
-					 else if (response === 'ok'){
-						window.alert("sucessfully registered aka ok");
+						  $('#message_line').text("This email adress or phone number have been used already");
+					 else if (response === 'ok'){ // fix this by looking if the first too letters are 'ok' then good
+						  window.console.log("This is what the .ajax response contains: "+response);
+						  $.get('echo.php', params, function(data){
+							  $('#html').html(data);
+						  });
 					}
 					else	
 						$('#message_line').text(response);
