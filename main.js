@@ -437,7 +437,7 @@ $(document).ready( function() {
         errorStatusHandle.text("");
 		 if ( isValidData() ){
 			 var params = $('form').serialize();
-			 
+			 params = params+"&userPic="+ $('#userPic').val().slice(12);
 			 $.ajax({
 				 type: "GET",
 				 url: "php/dataBaseInsertion.php",
@@ -446,8 +446,6 @@ $(document).ready( function() {
 					  if(response === 'dup')
 						  $('#message_line').text("This email adress or phone number have been used already");
 					 else if (response === 'ok'){ 
-						 
-						 
 						  $.get('php/confirmationPage.php', params, function(data){
 							  $('#html').html(data);
 						  });
