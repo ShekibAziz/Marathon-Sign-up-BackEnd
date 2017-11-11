@@ -1,6 +1,6 @@
 <?php
-	$db = mysqli_connect('localhost','root','','SDSU');
-		
+//	$db = mysqli_connect('','','',''); dont forget to change this to SDSU connections.
+		$db = mysqli_connect('localhost','root','','SDSU');
 		// returns the error code from the last connection error, if any.
 	if(mysqli_connect_errno()){
 		echo "Data base connecction failed with following errors: ".mysqli_connect_error();
@@ -22,7 +22,7 @@
 	$medicalCondition = $_GET["medicalCondition"];
 	$experianceLevel = $_GET["experianceLevel"];
 	$ageGroup = $_GET["ageGroup"];
-//	$userPic = $_GET["userPic"];
+	$userPic = $_GET["userPic"];
 
 	$dupDbLookUp = "select * from runners where email='$email' OR areaphone='$areaPhone' AND prefixPhone='$prefixPhone' AND phone='$phone' ;";
 	$query_lookUp = mysqli_query($db,$dupDbLookUp);
@@ -31,7 +31,7 @@
 		echo "dup";
 	else if($numDbChanges === 0){
 		echo "ok";
-		$query = "INSERT INTO runners(firstName,lastName,middleName,address,city,state,zipcode,areaPhone,prefixPhone,phone,email,gender,DOB,medicalCondition,experianceLevel,ageGroup) VALUES(
+		$query = "INSERT INTO runners(firstName,lastName,middleName,address,city,state,zipcode,areaPhone,prefixPhone,phone,email,gender,DOB,medicalCondition,experianceLevel,ageGroup,userPic) VALUES(
 		'$firstName',
 		'$lastName',
 		'$middleName',
@@ -47,20 +47,15 @@
 		'$DOB',
 		'$medicalCondition',
 		'$experianceLevel',
-		'$ageGroup')";
-		
-		//insertion
-//		, userPic
-		
-		//values
-//		,
-//		'$userPic'
-		
+		'$ageGroup',
+		'$userPic'
+		)";
 		
  // running the query and putting it in the database
-			$query_Run = mysqli_query($db, $query);
+		$query_Run = mysqli_query($db, $query);
 		}
 	else
 		echo "Error, failure".$numDbChanges;
-	
+
+	mysqli_close($db);	
 ?>

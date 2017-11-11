@@ -1,0 +1,24 @@
+use jadrn004;
+drop table if exists runners;
+CREATE TABLE runners (
+  firstName VARCHAR(25) NOT NULL,
+  lastName VARCHAR(25) NOT NULL,
+  middleName VARCHAR(25),
+  address VARCHAR(80) NOT NULL,
+  city VARCHAR(30) NOT NULL,
+  state VARCHAR(2) NOT NULL,
+  zipcode char(5) NOT NULL,
+  areaPhone char(3) NOT NULL,  
+  prefixPhone char(3) NOT NULL,
+  phone char(4) NOT NULL,
+  email VARCHAR(25) NOT NULL,
+  gender VARCHAR(6) NOT NULL,
+  DOB char(10) NOT NULL,
+  medicalCondition VARCHAR(300),
+  experianceLevel VARCHAR(15) NOT NULL,
+  ageGroup VARCHAR(6) NOT NULL,
+  userPic VARCHAR(25) NOT NULL
+);
+INSERT INTO runners VALUES('Shekib','Aziz','','212 main avenue','Chula Vista','CA','91211','616','333','3431','shekib@gmail.com','male','05131994','','novice','senior','picture.jpg');
+INSERT INTO runners VALUES('James','Mamil','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','female','05132004','','novice','senior','picture.jpg');
+

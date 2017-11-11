@@ -14,7 +14,7 @@
 										Not done yet
 	_ 4.Server_side data sanitation Just like we did with js but now in the backend with php
 	_ 5.upload the pic and save it to a folder and save as the person's phone number
-	_ 6.Report_Page that gives the roster of the runners gouped by(teen, adult, senior) and 			  alphabetixe by last name
+	_ 6.Report_Page that gives the roster of the runners gouped by(teen, adult, senior) and  alphabetixe by last name
 				Runner's last name, firstname
 				The runner's image
 				Runner's age at the time the report is generated
@@ -30,9 +30,13 @@
 */
 
 /*
-			Questions:
+			Questions: fixes/
+	Confirmation Page:		
 		1.how do I make the target css on the run. When the js is loading the html. ?
 		2.make sure when you put a picture or uploud a picture the confirmation works perfectly.
+		3.Add a button to go back to the webstie.
+		4.Remove any css or js from php files. .fornimation page.
+		5.create a button to take the user back to the websie in confirmation page.
 		
 */
 
@@ -436,14 +440,15 @@ $(document).ready( function() {
 			 
 			 $.ajax({
 				 type: "GET",
-				 url: "main.php",
+				 url: "php/dataBaseInsertion.php",
 				 data: params,
 				 success: function (response){
 					  if(response === 'dup')
 						  $('#message_line').text("This email adress or phone number have been used already");
-					 else if (response === 'ok'){ // fix this by looking if the first too letters are 'ok' then good
-						  window.console.log("This is what the .ajax response contains: "+response);
-						  $.get('echo.php', params, function(data){
+					 else if (response === 'ok'){ 
+						 
+						 
+						  $.get('php/confirmationPage.php', params, function(data){
 							  $('#html').html(data);
 						  });
 					}
