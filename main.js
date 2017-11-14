@@ -1,3 +1,4 @@
+
 //		  Aziz, Shekib
 //      jadrn004
 //      Project #2
@@ -9,11 +10,11 @@
 	_ 1.Be able to put user information from the browser to the database
 	_ 2.Check_dup if the database already has this user by comaring phone number and email
 	_ 3Confirmation_Page -> just show them the info they have intered.
+	_ 4.upload the pic and save it to a folder and save as the person's phone number
 	
 	
 										Not done yet
-	_ 4.Server_side data sanitation Just like we did with js but now in the backend with php
-	_ 5.upload the pic and save it to a folder and save as the person's phone number
+	_ 5.Server_side data sanitation Just like we did with js but now in the backend with php
 	_ 6.Report_Page that gives the roster of the runners gouped by(teen, adult, senior) and  alphabetixe by last name
 				Runner's last name, firstname
 				The runner's image
@@ -37,6 +38,7 @@
 		3.Add a button to go back to the webstie.
 		4.Remove any css or js from php files. .fornimation page.
 		5.create a button to take the user back to the websie in confirmation page.
+		6.upload the pic and save it to a folder and save as the person's phone number
 		
 */
 
@@ -437,7 +439,9 @@ $(document).ready( function() {
         errorStatusHandle.text("");
 		 if ( isValidData() ){
 			 var params = $('form').serialize();
-			 params = params+"&userPic="+ $('#userPic').val().slice(12);
+			 var picParam = "userPic="+ $('#userPic').val().slice(12);
+			 params = params+"&"+picParam;
+			 window.console.log("param from the first ajax call: "+params);
 			 $.ajax({
 				 type: "GET",
 				 url: "php/dataBaseInsertion.php",
@@ -445,16 +449,39 @@ $(document).ready( function() {
 				 success: function (response){
 					  if(response === 'dup')
 						  $('#message_line').text("This email adress or phone number have been used already");
-					 else if (response === 'ok'){ 
-						  $.get('php/confirmationPage.php', params, function(data){
-							  $('#html').html(data);
-						  });
+					 else if (response === 'ok'){
+						 $('form').serialize();
+						 $('form').submit();
+//						  $.get('php/confirmationPage.php', params, function(data){
+//							  $('#html').html(data);
+//						  });
 					}
 					else	
 						$('#message_line').text(response);
 				}
 			 });	
 		 }
+		 
+		 //
+		 var formData = new FormData();
+		 formData.append('userPic', $('#userPic')[0].files[0]);
+		 window.console.log('FormData: '+formData);
+		 	if ( isValidData() ){
+			 $.ajax({
+				 type: "POST",
+				 url: "php/picUpload.php",
+				 data: formData,
+				 processData: false,
+				 contentType: false,
+				 success: function (data){
+				 	window.console.log("got to the second ajax DATA is: "+data); 
+				}
+			 });	
+		 }
+		 
+		 //
+		 
+		 
         });  
 
 	

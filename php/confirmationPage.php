@@ -14,7 +14,7 @@ td { border: solid 1px black; padding: 5px; background-color: white; }
 th { background-color: #CCCCCC; padding: 10px; border: solid 2px black; }
 html{
   background: #293f50;
-  background: radial-gradient(#648880, #293f50);
+  background: radial-gradient(#648880, #293f50); 
   background-color: #b2b2b2;
   background-color: rgba(0, 0, 0, .3);
 /*  background color*/

@@ -1,6 +1,6 @@
 <?php
-//	$db = mysqli_connect('','','',''); dont forget to change this to SDSU connections.
-		$db = mysqli_connect('localhost','root','','SDSU');
+	$db = mysqli_connect('opatija.sdsu.edu:3306','jadrn004','tomato','jadrn004');
+//	$db = mysqli_connect('localhost','root','','SDSU');
 		// returns the error code from the last connection error, if any.
 	if(mysqli_connect_errno()){
 		echo "Data base connecction failed with following errors: ".mysqli_connect_error();
