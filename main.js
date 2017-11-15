@@ -36,9 +36,10 @@
 		1.how do I make the target css on the run. When the js is loading the html. ?
 		2.make sure when you put a picture or uploud a picture the confirmation works perfectly.
 		3.Add a button to go back to the webstie.
-		4.Remove any css or js from php files. .fornimation page.
+		4.Remove any css or js from php files. .fornimation page. and report.php
 		5.create a button to take the user back to the websie in confirmation page.
 		6.upload the pic and save it to a folder and save as the person's phone number
+		7.How should we handle the cituation where user has their js enabled and we have php and js validation. The programm is gonna display 2 of the same errors. How do we handle that?
 		
 */
 
