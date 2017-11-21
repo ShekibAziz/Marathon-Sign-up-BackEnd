@@ -1,7 +1,7 @@
 /*
 Aziz, Shekib
       jadrn004
-      Project #2
+      Project #3
       Fall 2017
 */
 html{
@@ -175,3 +175,56 @@ footer{
 	vertical-align: middle;
 	text-align: center;
 }
+.confirmationh1  {
+    text-align: center;
+    color:goldenrod;
+}
+
+.confirmationTable {
+    border: solid 2px black; 
+    padding: 10px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td {
+    border: solid 1px black;
+    padding: 5px;
+    color:black;
+    background-color: white; 
+}
+
+th { 
+    background-color: #CCCCCC; 
+    padding: 10px; 
+    color:black;
+    border: solid 2px black; 
+}
+.imgSize{
+    width: 50px;
+    height: auto;
+}
+.secreth1{ 
+    text-align: center; 
+    color:goldenrod;}
+
+.secretTable { 
+    border: solid 2px black;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto; 
+}
+.login{
+    padding-top: 100px;
+    text-align: center;
+}
+#logout{
+    float:right;
+    background-color: white;
+    color: black;
+}
+.loginSuccess{
+    text-align: center;
+    color:red;
+}
+

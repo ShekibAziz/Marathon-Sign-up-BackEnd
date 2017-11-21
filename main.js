@@ -1,7 +1,7 @@
 
-//		  Aziz, Shekib
+//		 Aziz, Shekib
 //      jadrn004
-//      Project #2
+//      Project #3
 //      Fall 2017
  
 /*
@@ -11,11 +11,7 @@
 	_ 2.Check_dup if the database already has this user by comaring phone number and email
 	_ 3Confirmation_Page -> just show them the info they have intered.
 	_ 4.upload the pic and save it to a folder and save as the person's phone number
-	
-	
-										Not done yet
-	_ 5.Server_side data sanitation Just like we did with js but now in the backend with php
-	_ 6.Report_Page that gives the roster of the runners gouped by(teen, adult, senior) and  alphabetixe by last name
+	_ 5.Report_Page that gives the roster of the runners gouped by(teen, adult, senior) and  alphabetixe by last name
 				Runner's last name, firstname
 				The runner's image
 				Runner's age at the time the report is generated
@@ -23,23 +19,15 @@
 	_ 7.eport must be accessible only after a login
 		MUST BE PASSWORD PROTECTED (3 passwords (cs545, and two of my choice)) 
 			Passwords must be encrypted on the server.
-	- 
+	_ 6.Server_side data sanitation Just like we did with js but now in the backend with php
+
 */
 
 /*Checklist for comletion of every task 
   ERROR messages for every time something is wrong.
 */
-
 /*
-			Questions: fixes/
-	Confirmation Page:		
-		1.how do I make the target css on the run. When the js is loading the html. ?
-		2.make sure when you put a picture or uploud a picture the confirmation works perfectly.
-		3.Add a button to go back to the webstie.
-		4.Remove any css or js from php files. .fornimation page. and report.php
-		5.create a button to take the user back to the websie in confirmation page.
-		6.upload the pic and save it to a folder and save as the person's phone number
-		7.How should we handle the cituation where user has their js enabled and we have php and js validation. The programm is gonna display 2 of the same errors. How do we handle that?
+
 		
 */
 
@@ -317,11 +305,6 @@ $(document).ready( function() {
 				}
         return true;
         }       
-	
-	
-	
-//	var params =$('form').serialize();
-	
 
 
 	
@@ -442,31 +425,27 @@ $(document).ready( function() {
 			 var params = $('form').serialize();
 			 var picParam = "userPic="+ $('#userPic').val().slice(12);
 			 params = params+"&"+picParam;
-			 window.console.log("param from the first ajax call: "+params);
+	        var url ='php/ajax.php';
 			 $.ajax({
 				 type: "GET",
-				 url: "php/dataBaseInsertion.php",
+				 url: url,
 				 data: params,
 				 success: function (response){
-					  if(response === 'dup')
+					  if($.trim(response) === 'DUP')
 						  $('#message_line').text("This email adress or phone number have been used already");
-					 else if (response === 'ok'){
-						 $('form').serialize();
+					 else if ($.trim(response) === 'OK'){
+                         $('form').serialize();
 						 $('form').submit();
-//						  $.get('php/confirmationPage.php', params, function(data){
-//							  $('#html').html(data);
-//						  });
 					}
 					else	
 						$('#message_line').text(response);
 				}
 			 });	
-		 }
+		 
 		 
 		 //
 		 var formData = new FormData();
 		 formData.append('userPic', $('#userPic')[0].files[0]);
-		 window.console.log('FormData: '+formData);
 		 	if ( isValidData() ){
 			 $.ajax({
 				 type: "POST",
@@ -474,24 +453,19 @@ $(document).ready( function() {
 				 data: formData,
 				 processData: false,
 				 contentType: false,
-				 success: function (data){
-				 	window.console.log("got to the second ajax DATA is: "+data); 
+				 success: function (data){ 
 				}
 			 });	
 		 }
-		 
-		 //
-		 
-		 
+    }
         });  
 
 	
-	
     $(':reset').on('click', function() {
         for(var i=0; i < 11; i++)
-            elementHandle[i].removeClass("error");
-        errorStatusHandle.text("");
-        });                                       
+        		elementHandle[i].removeClass("error");
+        		errorStatusHandle.text("");
+        });    
 }); //jquery ready document
 
 	

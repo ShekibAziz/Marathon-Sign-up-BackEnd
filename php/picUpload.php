@@ -1,4 +1,12 @@
 <!--
+
+Aziz, Shekib
+      jadrn004
+      Project #3
+      Fall 2017
+-->
+
+<!--
 $_FILES['file']['name'] //name of the upload file
 $_FILES['file']['type']	//the type of the uploaded file
 $_FILES['file']['size'] //the size in bytes of the upload file

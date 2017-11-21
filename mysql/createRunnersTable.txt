@@ -17,8 +17,38 @@ CREATE TABLE runners (
   medicalCondition VARCHAR(300),
   experianceLevel VARCHAR(15) NOT NULL,
   ageGroup VARCHAR(6) NOT NULL,
-  userPic VARCHAR(25) NOT NULL
+  userPic VARCHAR(100) NOT NULL
 );
-INSERT INTO runners VALUES('Shekib','Aziz','','212 main avenue','Chula Vista','CA','91211','616','333','3431','shekib@gmail.com','male','05/13/1994','','novice','senior','picture.jpg');
-INSERT INTO runners VALUES('James','Mamil','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','female','2/11/2004','','novice','senior','picture.jpg');
+INSERT INTO runners VALUES('Shekib','Aziz','','212 main avenue','Chula Vista','CA','91211','616','333','3431','shekib@gmail.com','male','05/13/1994','','novice','senior','aa.jpg');
+INSERT INTO runners VALUES('James','Mamil','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','male','2/11/2004','','novice','senior','adownload.jpeg');
+INSERT INTO runners VALUES('John','Smith','','1234 Sreet Ave','Carlsbad','CA','92335','342','263','3342','johnS@gmail.com','male','5/21/1966','','novice','senior','adownload.jpeg');
+INSERT INTO runners VALUES('Luka','Kharkos','','2341 Willow st','La Mesa','AZ','41311','546','323','5241','LukaK@yahoo.com','male','4/12/1988','','expert','adult','aa.jpg');
+INSERT INTO runners VALUES('Aames','Aamil','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','male','2/11/2004','','novice','adult','adownload.jpeg');
+INSERT INTO runners VALUES('Bames','Jamil','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','male','2/11/2004','','novice','adult','adownload.jpeg');
+INSERT INTO runners VALUES('Aames','Bamil','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','male','2/11/2004','','novice','adult','aa.jpg');
+INSERT INTO runners VALUES('Bames','Vamil','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','male','2/11/2004','','novice','adult','adownload.jpeg');
+INSERT INTO runners VALUES('Sames','Samil','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','male','2/11/2004','','novice','adult','adownload.jpeg');
+INSERT INTO runners VALUES('James','Mammal','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','male','2/11/2004','','novice','adult','aa.jpg');
+INSERT INTO runners VALUES('James','Mtabiel','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','male','2/11/2004','','novice','adult','adownload.jpeg');
+INSERT INTO runners VALUES('James','ABC','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','male','2/11/2004','','novice','adult','adownload.jpeg');
+INSERT INTO runners VALUES('James','Das','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','male','2/11/2004','','novice','senior','aa.jpg');
+INSERT INTO runners VALUES('James','Palas','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','male','2/11/2004','','novice','senior','adownload.jpeg');
+INSERT INTO runners VALUES('James','Marvi','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','male','2/11/2004','','novice','senior','adownload.jpeg');
+INSERT INTO runners VALUES('James','Mam','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','male','2/11/2004','','novice','senior','aa.jpg');
+INSERT INTO runners VALUES('James','Kali','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','male','2/11/2004','','novice','senior','adownload.jpeg');
+INSERT INTO runners VALUES('James','linux','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','female','2/11/2004','','novice','senior','aa.jpg');
+INSERT INTO runners VALUES('James','Windows','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','female','2/11/2004','','novice','senior','adownload.jpeg');
+INSERT INTO runners VALUES('James','Aamil','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','female','2/11/2004','','novice','senior','adownload.jpeg');
+INSERT INTO runners VALUES('James','Bamil','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','female','2/11/2004','','novice','senior','aa.jpg');
+INSERT INTO runners VALUES('James','Camil','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','female','2/11/2004','','novice','teen','adownload.jpeg');
+INSERT INTO runners VALUES('James','Damil','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','female','2/11/2004','','novice','teen','adownload.jpeg');
+INSERT INTO runners VALUES('James','Camil','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','female','2/11/2004','','novice','teen','aa.jpg');
+INSERT INTO runners VALUES('James','Damil','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','female','2/11/2004','','novice','teen','adownload.jpeg');
+INSERT INTO runners VALUES('James','Mamil','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','female','2/11/2004','','novice','teen','adownload.jpeg');
+INSERT INTO runners VALUES('James','Hamil','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','female','2/11/2004','','novice','teen','aa.jpg');
+INSERT INTO runners VALUES('James','Famil','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','female','2/11/2004','','novice','teen','adownload.jpeg');
+INSERT INTO runners VALUES('James','Tamil','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','female','2/11/2004','','novice','teen','adownload.jpeg');
+INSERT INTO runners VALUES('James','Qamil','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','female','2/11/2004','','novice','senior','aa.jpg');
+INSERT INTO runners VALUES('James','Vamil','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','female','2/11/2004','','novice','senior','adownload.jpeg');
+INSERT INTO runners VALUES('James','Damil','','33 what avenue','Vista','SD','93311','636','333','5431','mamilb@gmail.com','female','2/11/2004','','novice','senior','adownload.jpeg');
 
